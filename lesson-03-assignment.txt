@@ -1,0 +1,38 @@
+1.What tables do you need to add? Decide on table names and their associations to each other and any existing tables/models.
+There would have to be a total of 8 new topics to add. SQL, Data Modeling, Javascript, CSS, Automated Testing, Debugging, Web Request Cycle, HTTP. 
+The associations would be "lessons' and 'topics'
+
+
+2.What columns are necessary for the associations you decided on?
+topics table
+id 
+title 
+
+
+lesson_topics table
+id 
+lesson_id 
+topic_id 
+
+3.What other columns (if any) need to be included on the tables? What other data needs to be stored?
+The topics table might include created_at and updated_at for timestamp tracking.
+The lesson_topics table does not need additional columns, just the foreign keys.
+
+4.Write out each table's name and column names with data types.
+Table: topics
+-----------------------
+id           | integer  
+title        | string  
+trimester    | reference 
+
+
+Table: lesson_topics (join table)
+-----------------------
+id          | integer  
+lesson_id   | integer  
+topic_id    | integer  
+
+
+5.Determine the generator command you'll need to create the migration file and run the command to generate the empty migration file. Start with just the topics migration. (Hint: your filename should be create_topics)
+Command:
+bin/rails generate migration CreateTopics title:string
