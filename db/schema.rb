@@ -51,7 +51,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_01_232340) do
     t.integer "course_id", null: false
     t.integer "lesson_number"
     t.string "title"
-    t.string "url"
     t.date "assignment_due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
