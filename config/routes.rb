@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   
-  
+  # Admin Dashboard Routes
+  get '/dashboard', to: 'admin_dashboard#index'
 
+  # Course Route (resourceful route)
+  get '/courses/:id', to: 'courses#show'
 end
